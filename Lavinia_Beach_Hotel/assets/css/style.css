@@ -239,6 +239,21 @@ li.sub-menu-style-two:hover ul.sub-menu-two {
   left: 0;
 }
 
+.booking-btn a {
+  background: #c19a6b;
+  color: rgb(0, 0, 0) !important;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.booking-btn a:hover {
+  background: #a17f56;
+}
+
 .sticky {
   left: 0;
   margin: auto;
@@ -333,6 +348,31 @@ li.sub-menu-style-two:hover ul.sub-menu-two {
 .whatsapp-btn:hover {
   background-color: #128c7e; /* Darker green on hover */
   transform: translateY(-2px); /* Lift effect */
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 35px;
+  left: 25px;
+  background-color: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: 0.3s;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+  color: white;
 }
 
 .owl-prev {
