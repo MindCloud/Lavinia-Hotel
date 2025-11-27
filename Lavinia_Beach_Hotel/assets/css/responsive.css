@@ -400,7 +400,7 @@
 /*==================================================*/
 
 .about-area.inner .about-thumb {
-    margin: -55px;
+    margin: 0px;
 }
 
 
@@ -4204,7 +4204,7 @@ p.section-desc-2 {
 /*==================================================*/
 
 .about-area.inner {
-    padding: 124px 0 132px;
+    padding: 124px 0px 132px;
 }
 
 .about-area.inner .about-thumb {
