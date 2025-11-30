@@ -2,7 +2,7 @@
 const roomTypes = {
   deluxe: {
     id: "deluxe",
-    name: "Deluxe Family Rooms",
+    name: "Deluxe Double Rooms",
     category: "Luxury Room",
     price: "$560",
     size: "1500 SQ.FT",
@@ -10,6 +10,8 @@ const roomTypes = {
     images: [
       "assets/images/rooms/Deluxe1.jpg",
       "assets/images/rooms/Deluxe2.jpg",
+      "assets/images/rooms/Deluxe3.jpg",
+      "assets/images/rooms/Deluxe4.jpg",
     ],
     description: [
       "Spacious and elegantly designed, our Deluxe Family Rooms offer the perfect blend of comfort and luxury. Ideal for families or groups, featuring a separate living area and panoramic views.",
@@ -41,7 +43,7 @@ const roomTypes = {
 
   double: {
     id: "double",
-    name: "Double Suite Rooms",
+    name: "Quadruple Room",
     category: "Luxury Suite",
     price: "$620",
     size: "1800 SQ.FT",
@@ -49,6 +51,7 @@ const roomTypes = {
     images: [
       "assets/images/rooms/double-queen1.jpg",
       "assets/images/rooms/double-queen2.jpg",
+      "assets/images/rooms/double-queen3.jpg",
     ],
     description: [
       "Indulge in refined elegance with our Double Suite Rooms. Perfect for couples or small families, offering separate bedroom and living spaces with ocean or garden views.",
@@ -80,7 +83,7 @@ const roomTypes = {
 
   superior: {
     id: "superior",
-    name: "Superior Bed Rooms",
+    name: "Triple Rooms",
     category: "Premium Room",
     price: "$480",
     size: "1200 SQ.FT",
@@ -88,6 +91,7 @@ const roomTypes = {
     images: [
       "assets/images/rooms/superior1.jpg",
       "assets/images/rooms/superior2.jpg",
+      "assets/images/rooms/superior3.jpg",
     ],
     description: [
       "Modern comfort meets tropical charm in our Superior Bed Rooms. Perfect for solo travelers or couples seeking a peaceful retreat with all essential luxuries.",
@@ -117,75 +121,75 @@ const roomTypes = {
     rating: 4,
   },
 
-  junior: {
-    id: "junior",
-    name: "Junior Suite Rooms",
-    category: "Executive Suite",
-    price: "$720",
-    size: "2000 SQ.FT",
-    capacity: "2 - 4 Persons",
-    images: [
-      "assets/images/rooms/junior1.jpg",
-      "assets/images/rooms/junior2.jpg",
-    ],
-    description: [
-      "Elevate your stay with our Junior Suite Rooms — open-plan luxury with a dedicated living area, panoramic windows, and exclusive access to the executive lounge.",
-      "Perfect for business travelers or couples wanting extra space and privacy.",
-    ],
-    checkIn: ["Priority check-in from 1:00 PM", "Express check-in available"],
-    checkOut: [
-      "Check-out by 12:00 PM",
-      "Late check-out until 4:00 PM (complimentary for loyalty members)",
-    ],
-    houseRules:
-      "Executive floor access only. Business attire in lounge. No children under 12 in lounge after 8 PM.",
-    childrenBeds:
-      "Children welcome. One extra bed allowed at $45/night. Cribs available.",
-    amenities: [
-      "2 - 4 Persons",
-      "Ultra-Fast WiFi",
-      "Executive Lounge Access",
-      "Full Breakfast Buffet",
-      "2000 SQ.FT Open Layout",
-      "Nespresso Machine & Minibar",
-    ],
-    bed: "1 King Bed + Pull-out Sofa",
-    rating: 4.8,
-  },
+  // junior: {
+  //   id: "junior",
+  //   name: "Junior Suite Rooms",
+  //   category: "Executive Suite",
+  //   price: "$720",
+  //   size: "2000 SQ.FT",
+  //   capacity: "2 - 4 Persons",
+  //   images: [
+  //     "assets/images/rooms/junior1.jpg",
+  //     "assets/images/rooms/junior2.jpg",
+  //   ],
+  //   description: [
+  //     "Elevate your stay with our Junior Suite Rooms — open-plan luxury with a dedicated living area, panoramic windows, and exclusive access to the executive lounge.",
+  //     "Perfect for business travelers or couples wanting extra space and privacy.",
+  //   ],
+  //   checkIn: ["Priority check-in from 1:00 PM", "Express check-in available"],
+  //   checkOut: [
+  //     "Check-out by 12:00 PM",
+  //     "Late check-out until 4:00 PM (complimentary for loyalty members)",
+  //   ],
+  //   houseRules:
+  //     "Executive floor access only. Business attire in lounge. No children under 12 in lounge after 8 PM.",
+  //   childrenBeds:
+  //     "Children welcome. One extra bed allowed at $45/night. Cribs available.",
+  //   amenities: [
+  //     "2 - 4 Persons",
+  //     "Ultra-Fast WiFi",
+  //     "Executive Lounge Access",
+  //     "Full Breakfast Buffet",
+  //     "2000 SQ.FT Open Layout",
+  //     "Nespresso Machine & Minibar",
+  //   ],
+  //   bed: "1 King Bed + Pull-out Sofa",
+  //   rating: 4.8,
+  // },
 
-  family: {
-    id: "family",
-    name: "Family Suite Room",
-    category: "Family Suite",
-    price: "$850",
-    size: "2500 SQ.FT",
-    capacity: "4 - 8 Persons",
-    images: [
-      "assets/images/rooms/family1.jpg",
-      "assets/images/rooms/family2.jpg",
-    ],
-    description: [
-      "Designed for larger families, our Family Suite offers two bedrooms, a full kitchenette, and a spacious living area — all with direct beach access.",
-      "Includes children's play corner, bunk beds, and family-friendly dining options.",
-    ],
-    checkIn: [
-      "Family early check-in from 12:00 PM",
-      "Dedicated family welcome pack",
-    ],
-    checkOut: ["Check-out by 11:00 AM", "Flexible late check-out for families"],
-    houseRules:
-      "Family-friendly environment. Supervised children only in pool areas. No glass near pool.",
-    childrenBeds:
-      "Up to 4 children stay free. Bunk beds included. Extra beds at $25/child.",
-    amenities: [
-      "4 - 8 Persons",
-      "Free WiFi & Smart TV",
-      "Kids Pool & Play Area",
-      "All Meals Included Option",
-      "2500 SQ.FT Suite",
-      "Kitchenette & Laundry",
-    ],
-    bed: "2 King Beds + 2 Bunk Beds",
-    rating: 4.7,
-  },
+  // family: {
+  //   id: "family",
+  //   name: "Family Suite Room",
+  //   category: "Family Suite",
+  //   price: "$850",
+  //   size: "2500 SQ.FT",
+  //   capacity: "4 - 8 Persons",
+  //   images: [
+  //     "assets/images/rooms/family1.jpg",
+  //     "assets/images/rooms/family2.jpg",
+  //   ],
+  //   description: [
+  //     "Designed for larger families, our Family Suite offers two bedrooms, a full kitchenette, and a spacious living area — all with direct beach access.",
+  //     "Includes children's play corner, bunk beds, and family-friendly dining options.",
+  //   ],
+  //   checkIn: [
+  //     "Family early check-in from 12:00 PM",
+  //     "Dedicated family welcome pack",
+  //   ],
+  //   checkOut: ["Check-out by 11:00 AM", "Flexible late check-out for families"],
+  //   houseRules:
+  //     "Family-friendly environment. Supervised children only in pool areas. No glass near pool.",
+  //   childrenBeds:
+  //     "Up to 4 children stay free. Bunk beds included. Extra beds at $25/child.",
+  //   amenities: [
+  //     "4 - 8 Persons",
+  //     "Free WiFi & Smart TV",
+  //     "Kids Pool & Play Area",
+  //     "All Meals Included Option",
+  //     "2500 SQ.FT Suite",
+  //     "Kitchenette & Laundry",
+  //   ],
+  //   bed: "2 King Beds + 2 Bunk Beds",
+  //   rating: 4.7,
+  // },
 };
