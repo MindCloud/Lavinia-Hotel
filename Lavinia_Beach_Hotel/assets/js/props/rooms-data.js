@@ -2,7 +2,7 @@
 const roomTypes = {
   deluxe: {
     id: "deluxe",
-    name: "Deluxe Double Rooms",
+    name: "Deluxe Double Rooms With Sea View",
     category: "Luxury Room",
     price: "$560",
     size: "1500 SQ.FT",
@@ -43,7 +43,7 @@ const roomTypes = {
 
   double: {
     id: "double",
-    name: "Quadruple Room",
+    name: "Quadruple Room With Sea View",
     category: "Luxury Suite",
     price: "$620",
     size: "1800 SQ.FT",
@@ -83,7 +83,7 @@ const roomTypes = {
 
   superior: {
     id: "superior",
-    name: "Triple Rooms",
+    name: "Triple Rooms With Sea View",
     category: "Premium Room",
     price: "$480",
     size: "1200 SQ.FT",
