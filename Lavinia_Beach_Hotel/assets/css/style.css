@@ -1322,10 +1322,10 @@ p.section-desc-2 {
 }
 
 .profile-avatar {
-  width: 100px; /* Slightly larger for higher-res input */
-  height: 100px; /* Ensures a perfect circle */
+  width: 110px; /* Slightly larger for higher-res input */
+  height: 110px; /* Ensures a perfect circle */
   object-fit: cover; /* Crops the image cleanly */
-  border-radius: 50%; /* Circular shape */
+  border-radius: 100%; /* Circular shape */
   border: 2px solid #d4af37; /* Gold accent border */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Professional subtle shadow */
 }
