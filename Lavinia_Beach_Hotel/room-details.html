@@ -140,7 +140,10 @@
           </div>
           <div class="col-lg-3">
             <div class="header-button text-right">
-              <a href="find-room.html">Booking Online</a>
+              <a
+                href="https://www.booking.com/hotel/lk/lavinia-beach-ambalangoda-ambalangoda.html?label=gog235jc-10CAsohQFCJWxhdmluaWEtYmVhY2gtYW1iYWxhbmdvZGEtYW1iYWxhbmdvZGFIM1gDaIUBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKFr_HJBsACAdICJDg0ZWFiN2UxLWUzM2MtNDEyNS1hOTlhLWViMzFhMmM1NjRlONgCAeACAQ&sid=894e54b5c2b60a1417ce182591f3d73a&aid=356980&ucfs=1&arphpl=1&dest_id=-2212292&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=6a7f7e436c320225&srepoch=1765562247&from=searchresults"
+                >Booking Online</a
+              >
             </div>
           </div>
         </div>
@@ -168,7 +171,10 @@
 
             <!-- Proper Booking Online button -->
             <li class="menu-item booking-btn">
-              <a href="find-room.html">Booking Online</a>
+              <a
+                href="https://www.booking.com/hotel/lk/lavinia-beach-ambalangoda-ambalangoda.html?label=gog235jc-10CAsohQFCJWxhdmluaWEtYmVhY2gtYW1iYWxhbmdvZGEtYW1iYWxhbmdvZGFIM1gDaIUBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKFr_HJBsACAdICJDg0ZWFiN2UxLWUzM2MtNDEyNS1hOTlhLWViMzFhMmM1NjRlONgCAeACAQ&sid=894e54b5c2b60a1417ce182591f3d73a&aid=356980&ucfs=1&arphpl=1&dest_id=-2212292&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=6a7f7e436c320225&srepoch=1765562247&from=searchresults"
+                >Booking Online</a
+              >
             </li>
           </ul>
         </nav>
@@ -177,7 +183,9 @@
     <!--==================================================-->
     <!-- Breadcumb -->
     <!--==================================================-->
-    <div class="breadcumb-area d-flex align-items-center">
+    <div
+      class="breadcumb-area breadcumb-rooms-details d-flex align-items-center"
+    >
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-12">
@@ -655,37 +663,37 @@
                 <a
                   class="place venobox vbox-item"
                   data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery-1.jpg"
+                  href="assets/images/home-1/gallery/footer-1.jpg"
                   ><img src="assets/images/home-1/gallery/1.jpg" alt=""
                 /></a>
                 <a
                   class="place venobox vbox-item"
                   data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery-2.jpg"
+                  href="assets/images/home-1/gallery/footer-2.jpg"
                   ><img src="assets/images/home-1/gallery/2.jpg" alt=""
                 /></a>
                 <a
                   class="place venobox vbox-item"
                   data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery-3.jpg"
+                  href="assets/images/home-1/gallery/footer-3.jpg"
                   ><img src="assets/images/home-1/gallery/3.jpg" alt=""
                 /></a>
                 <a
                   class="place venobox vbox-item"
                   data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery-4.jpg"
+                  href="assets/images/home-1/gallery/footer-4.jpg"
                   ><img src="assets/images/home-1/gallery/4.jpg" alt=""
                 /></a>
                 <a
                   class="place venobox vbox-item"
                   data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery-5.jpg"
+                  href="assets/images/home-1/gallery/footer-5.jpg"
                   ><img src="assets/images/home-1/gallery/5.jpg" alt=""
                 /></a>
                 <a
                   class="place venobox vbox-item"
                   data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery-6.jpg"
+                  href="assets/images/home-1/gallery/footer-6.jpg"
                   ><img src="assets/images/home-1/gallery/6.jpg" alt=""
                 /></a>
               </div>
@@ -835,14 +843,16 @@
         const bookingList = document.querySelector(".booking-item ul");
         const booking = JSON.parse(localStorage.getItem("booking") || "{}");
         bookingList.innerHTML = `
-        <li><strong>Check In -</strong>${booking.checkIn || "04 Oct, 2023"}</li>
+        <!-- <li><strong>Check In -</strong>${
+          booking.checkIn || "04 Oct, 2023"
+        }</li>
         <li><strong>Check Out -</strong>${
           booking.checkOut || "10 Oct, 2023"
-        }</li>
-        <li><strong>Adult -</strong>${booking.adults || "02"}</li>
-        <li><strong>Children -</strong>${booking.children || "02"}</li>
+        }</li> -->
+        <li><strong>Adult -</strong>${room.adults || "02"}</li>
+        <li><strong>Children -</strong>${room.children || "02"}</li>
         <li><strong>Room Type -</strong>${room.name}</li>
-        <li><strong>Price/Night -</strong>${room.price}</li>
+        <!-- <li><strong>Price/Night -</strong>${room.price}</li> -->
       `;
 
         // ---- 8. Image carousel -------------------------------------------------------

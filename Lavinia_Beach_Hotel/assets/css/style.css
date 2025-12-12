@@ -280,26 +280,35 @@ li.sub-menu-style-two:hover ul.sub-menu-two {
   overflow: hidden;
 }
 
-/* Background image using ::before */
+/* Blurred background image */
 .hero-area::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url(../images/home-1/hero2.jpg) no-repeat center center / cover;
-  filter: blur(2px); /* Adjust blur */
-  transform: scale(1.1); /* Prevent blur edges */
+  background: url(../images/home-1/hero3.jpeg) no-repeat center center / cover;
+  /* filter: blur(2px); */
+  transform: scale(1.1);
   z-index: 0;
 }
 
-/* Ensure text stays above */
-.hero-area * {
-  position: relative;
+/* Dark overlay */
+.hero-area::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* Adjust darkness here */
   z-index: 1;
 }
 
-/* Second hero style */
+/* Ensure text always stays above everything */
+.hero-area * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Second hero style (keeps overlay working) */
 .hero-area.style-two::before {
-  background: url(../images/home-1/hero.jpg) no-repeat center center / cover;
+  background: url(../images/home-1/hero4.jpg) no-repeat center center / cover;
 }
 
 .hotel-rating ul li {
@@ -892,9 +901,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 100%;
   height: 229%;
   bottom: 0;
-  top: -111px;
+  top: -181px;
   left: 34%;
-  background: url(../images/home-1/section-shape2.png);
+  background: url(../images/home-1/home-watermark.png);
   background-repeat: no-repeat;
   z-index: -1;
 }
@@ -1220,26 +1229,36 @@ p.section-desc-2 {
 <!-- ===================-->*/
 .row.call-do-action-bg {
   position: relative;
-  background: url(../images/home-1/call-do-action-bg.png) no-repeat center
-    center/cover;
+  background: url(../images/home-1/zz.jpg) no-repeat center center / cover;
   padding: 73px 58px 66px;
   margin-top: -90px;
   overflow: hidden;
 }
 
+/* Blurred background image */
 .row.call-do-action-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: inherit; /* copies the background image */
-  filter: blur(5px); /* adjust blur strength */
-  transform: scale(1.1); /* prevent blur edge clipping */
+  background: inherit; /* same background image */
+  /* filter: blur(5px); */
+  transform: scale(1.1);
   z-index: 0;
 }
 
+/* Dark overlay */
+.row.call-do-action-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* adjust darkness here */
+  z-index: 1;
+}
+
+/* Keep content above everything */
 .row.call-do-action-bg > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .call-do-action-area .section-title {
@@ -7230,12 +7249,47 @@ a.dark-logo {
 <!--Start Breadcumb Area-->
 <!-- ========================================-->*/
 .breadcumb-area {
-  background: url(../images/inner/breadcumb-1.jpg);
-  background-repeat: no-repeat;
+  position: relative;
   background-size: cover;
   background-position: center center;
   padding: 260px 0 170px;
   text-align: center;
+  overflow: hidden;
+}
+
+/* Dark Overlay */
+.breadcumb-area::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Ensure breadcrumb text stays above overlay */
+.breadcumb-area * {
+  position: relative;
+  z-index: 2;
+}
+
+/* About Page */
+.breadcumb-about {
+  background-image: url(../images/inner/5.jpg);
+}
+
+/* Contact Page */
+.breadcumb-contact {
+  background-image: url(../images/inner/contacts.jpg);
+}
+
+/* Rooms Page */
+.breadcumb-rooms {
+  background-image: url(../images/inner/rooms.jpg);
+}
+
+/* Room Details Page */
+.breadcumb-rooms-details {
+  background-image: url(../images/inner/rooms-details.jpg);
 }
 
 .breadcum-title h4 {
