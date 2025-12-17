@@ -139,12 +139,12 @@
             </div>
           </div>
           <div class="col-lg-3">
-            <div class="header-button text-right">
+            <!-- <div class="header-button text-right">
               <a
                 href="https://www.booking.com/hotel/lk/lavinia-beach-ambalangoda-ambalangoda.html?label=gog235jc-10CAsohQFCJWxhdmluaWEtYmVhY2gtYW1iYWxhbmdvZGEtYW1iYWxhbmdvZGFIM1gDaIUBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKFr_HJBsACAdICJDg0ZWFiN2UxLWUzM2MtNDEyNS1hOTlhLWViMzFhMmM1NjRlONgCAeACAQ&sid=894e54b5c2b60a1417ce182591f3d73a&aid=356980&ucfs=1&arphpl=1&dest_id=-2212292&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=6a7f7e436c320225&srepoch=1765562247&from=searchresults"
                 >Booking Online</a
               >
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -170,12 +170,12 @@
             <li><a href="contact.html">Contact</a></li>
 
             <!-- Proper Booking Online button -->
-            <li class="menu-item booking-btn">
+            <!-- <li class="menu-item booking-btn">
               <a
                 href="https://www.booking.com/hotel/lk/lavinia-beach-ambalangoda-ambalangoda.html?label=gog235jc-10CAsohQFCJWxhdmluaWEtYmVhY2gtYW1iYWxhbmdvZGEtYW1iYWxhbmdvZGFIM1gDaIUBiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuAKFr_HJBsACAdICJDg0ZWFiN2UxLWUzM2MtNDEyNS1hOTlhLWViMzFhMmM1NjRlONgCAeACAQ&sid=894e54b5c2b60a1417ce182591f3d73a&aid=356980&ucfs=1&arphpl=1&dest_id=-2212292&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&srpvid=6a7f7e436c320225&srepoch=1765562247&from=searchresults"
                 >Booking Online</a
               >
-            </li>
+            </li> -->
           </ul>
         </nav>
       </div>
@@ -613,6 +613,7 @@
                     <li><i class="bi bi-telephone-fill"></i>+94 770892016</li>
                     <li>
                       <i class="bi bi-envelope"></i>laviniabeachhotel@gmail.com
+                      <i class="bi bi-envelope"></i>Front177@outlook.com
                     </li>
                     <li>
                       <i class="bi bi-geo-alt-fill"></i>No.01/07,Galle RD<br />
@@ -659,44 +660,7 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer-widget-content">
               <div class="footer-widget-title"><h4>Gallery</h4></div>
-              <div class="footer-widget-gallery">
-                <a
-                  class="place venobox vbox-item"
-                  data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery/footer-1.jpg"
-                  ><img src="assets/images/home-1/gallery/1.jpg" alt=""
-                /></a>
-                <a
-                  class="place venobox vbox-item"
-                  data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery/footer-2.jpg"
-                  ><img src="assets/images/home-1/gallery/2.jpg" alt=""
-                /></a>
-                <a
-                  class="place venobox vbox-item"
-                  data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery/footer-3.jpg"
-                  ><img src="assets/images/home-1/gallery/3.jpg" alt=""
-                /></a>
-                <a
-                  class="place venobox vbox-item"
-                  data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery/footer-4.jpg"
-                  ><img src="assets/images/home-1/gallery/4.jpg" alt=""
-                /></a>
-                <a
-                  class="place venobox vbox-item"
-                  data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery/footer-5.jpg"
-                  ><img src="assets/images/home-1/gallery/5.jpg" alt=""
-                /></a>
-                <a
-                  class="place venobox vbox-item"
-                  data-gall="lace-imgs"
-                  href="assets/images/home-1/gallery/footer-6.jpg"
-                  ><img src="assets/images/home-1/gallery/6.jpg" alt=""
-                /></a>
-              </div>
+              <div class="footer-widget-gallery" id="footerGallery"></div>
             </div>
           </div>
 
@@ -757,6 +721,37 @@
     <!--==================================================-->
     <!-- JS Libraries (same as original) -->
     <!--==================================================-->
+    <script>
+      const galleryJsonUrl =
+        "https://cdn.jsdelivr.net/gh/MindCloud/Lavinia-Hotel-Images@main/gallery.json";
+
+      fetch(galleryJsonUrl + "?t=" + Date.now())
+        .then((res) => res.json())
+        .then((data) => {
+          const gallery = document.getElementById("footerGallery");
+          gallery.innerHTML = "";
+
+          data.images.forEach((item) => {
+            const a = document.createElement("a");
+            a.className = "place venobox vbox-item";
+            a.setAttribute("data-gall", "lace-imgs");
+
+            a.href = item.full + "?v=" + Date.now();
+
+            const img = document.createElement("img");
+            img.src = item.thumb + "?v=" + Date.now();
+            img.alt = "Hotel Gallery Image";
+
+            a.appendChild(img);
+            gallery.appendChild(a);
+          });
+
+          if (window.jQuery && $.fn.venobox) {
+            $(".venobox").venobox();
+          }
+        })
+        .catch((err) => console.error("Gallery load error:", err));
+    </script>
     <script src="assets/js/vendor/jquery-3.6.2.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -860,11 +855,18 @@
         carouselContainer.innerHTML = ""; // clear placeholder
         room.images.forEach((src) => {
           carouselContainer.innerHTML += `
-          <div class="col-lg-12">
-            <div class="room-detils-thumb">
-              <img src="${src}" alt="${room.name}" />
-            </div>
-          </div>`;
+    <div class="item">
+      <div class="room-details-image-wrapper">
+        <img 
+          src="${src}" 
+          alt="${room.name}" 
+          class="img-fluid w-100"
+          style="height: auto; max-height: 70vh; object-fit: cover; border-radius: 10px;"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  `;
         });
 
         // Re-init Owl Carousel
@@ -873,13 +875,32 @@
           $(".room-details-list").owlCarousel({
             items: 1,
             loop: true,
+            margin: 1010,
             nav: true,
-            dots: false,
+            dots: true,
             autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
             navText: [
-              '<i class="bi bi-arrow-left"></i>',
-              '<i class="bi bi-arrow-right"></i>',
+              '<i class="bi bi-chevron-left fs-1"></i>',
+              '<i class="bi bi-chevron-right fs-1"></i>',
             ],
+            responsive: {
+              0: {
+                items: 1,
+                nav: true,
+                dots: true,
+              },
+              600: {
+                items: 1,
+              },
+              1000: {
+                items: 1,
+              },
+            },
+            // Make nav arrows visible & touch-friendly on mobile
+            navContainer: false,
+            stagePadding: 0,
           });
         }
 
